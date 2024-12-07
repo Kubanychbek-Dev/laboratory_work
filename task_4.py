@@ -13,14 +13,14 @@ class President(Employer):
         super().__init__(firstname, lastname, age)
         self.__position = position
 
-    def get_position(self):
-        print(f"должность: {self.__position}")
+    def __str__(self):
+        return f"{super().__str__()}\nдолжность: {self.__position}"
+
 
 
 president = President("Садыр", "Жапаров", 50,
                       "Президент Кыргызской Республики")
 print(president)
-president.get_position()
 print()
 
 class Manager(Employer):
@@ -28,14 +28,13 @@ class Manager(Employer):
         super().__init__(firstname, lastname, age)
         self.__position = position
 
-    def get_position(self):
-        print(f"должность: {self.__position}")
+    def __str__(self):
+        return f"{super().__str__()}\nдолжность: {self.__position}"
 
 
 manager = Manager("Ти́моти (Тим)", "До́нальд Кук", 64,
                   "Генеральный директор компании Apple")
 print(manager)
-manager.get_position()
 print()
 
 
@@ -44,9 +43,9 @@ class Worker(Employer):
         super().__init__(firstname, lastname, age)
         self.__position = position
 
-    def get_position(self):
-        print(f"должность: {self.__position}")
+    def __str__(self):
+        return f"{super().__str__()}\nдолжность: {self.__position}"
+
 
 worker = Worker("John", "Doe", 34, "Строитель")
 print(worker)
-worker.get_position()
