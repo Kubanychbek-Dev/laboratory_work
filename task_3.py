@@ -3,11 +3,8 @@ class Pets:
         self.__name = name
         self.__typeof = typeof
 
-    def get_name(self):
-        return self.__name
-
-    def get_type(self):
-        return self.__typeof
+    def __str__(self):
+        return f"Имя: {self.__name}\nВид: {self.__typeof}"
 
 
 class Dog(Pets):
@@ -15,8 +12,8 @@ class Dog(Pets):
         super().__init__(name, typeof)
         self.__sound = sound
 
-    def get_sound(self):
-        return self.__sound
+    def __str__(self):
+        return f"{super().__str__()}\nЗвук: {self.__sound}"
 
 
 class Cat(Pets):
@@ -24,17 +21,13 @@ class Cat(Pets):
         super().__init__(name, typeof)
         self.__sound = sound
 
-    def get_sound(self):
-        return self.__sound
+    def __str__(self):
+        return f"{super().__str__()}\nЗвук: {self.__sound}"
 
 
 dog = Dog("Reks", "немецкая овчарка", "Гав")
-print(f"Имя: {dog.get_name()}")
-print(f"Вид: {dog.get_type()}")
-print(f"Звук: {dog.get_sound()}")
+print(dog)
 print()
 
 cat = Cat("Гарфилд", "Персидский кот", "Мяу")
-print(f"Имя: {cat.get_name()}")
-print(f"Вид: {cat.get_type()}")
-print(f"Звук: {cat.get_sound()}")
+print(cat)
